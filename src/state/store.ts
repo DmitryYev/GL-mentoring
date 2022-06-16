@@ -1,7 +1,7 @@
 import { configureStore, combineReducers } from '@reduxjs/toolkit'
 
 import stateKeys from './stateKeys'
-import { userReducer, followersReducer, repositoriesReducer, subscriptionsReducer } from './slices'
+import { userReducer, followersReducer, repositoriesReducer, subscriptionsReducer } from './reducers'
 
 const rootReducer = combineReducers({
     [stateKeys.userStateKey]: userReducer,

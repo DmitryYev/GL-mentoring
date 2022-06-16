@@ -1,18 +1,18 @@
-export type User = {
-    name: string | null
+export interface IUser {
+    name: null | string
     loginName: string
-    company: string | null
+    company: null | string
     avatarLink: string
     followers: number
 }
 
-export type Follower = {
-    name: string
+export interface IFollower {
+    loginName: string
     avatarLink: string
     profileLink: string
 }
 
-export type Repository = {
+export interface IRepository {
     name: string
     description: string
     forks: number
@@ -21,5 +21,3 @@ export type Repository = {
         avatarLink: string
     }
 }
-
-export type Subscription = Repository
