@@ -3,7 +3,7 @@ import { createAsyncThunk } from '@reduxjs/toolkit'
 import apiClient from '../../utils/apiClient'
 import { IUser } from '../../types'
 
-interface IUserRaw {
+interface IUserResponse {
     name: null | string
     login: string
     avatar_url: string
@@ -11,15 +11,26 @@ interface IUserRaw {
     followers: number
 }
 
+interface IReceivedEventsResponse extends Array<{ [key: string]: unknown }> {}
+
 const fetchUser = createAsyncThunk<IUser, string, { rejectValue: string }>(
     'user/fetchUser',
     async (userName: string, { rejectWithValue }) => {
         try {
-            const { data } = await apiClient.get(`/users/${userName}`)
+            const { data: userData } = await apiClient.get<IUserResponse>(`/users/${userName}`)
 
-            const { name = null, login = '', avatar_url = '', company = null, followers = 0 } = data as IUserRaw
+            const { data: receivedEvents } = await apiClient.get<IReceivedEventsResponse>(
+                `/users/${userName}/received_events`
+            )
 
-            return { name, company, followers, loginName: login, avatarLink: avatar_url }
+            return {
+                name: userData.name,
+                company: userData.company,
+                followers: userData.followers,
+                loginName: userData.login,
+                avatarLink: userData.avatar_url,
+                receivedEventsCount: receivedEvents.length,
+            }
         } catch (error) {
             /**
              * @todo improve error handling

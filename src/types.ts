@@ -4,6 +4,7 @@ export interface IUser {
     company: null | string
     avatarLink: string
     followers: number
+    receivedEventsCount: number
 }
 
 export interface IFollower {

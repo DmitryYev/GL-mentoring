@@ -15,8 +15,9 @@ const initialState: IUserState = {
         company: null,
         avatarLink: '',
         followers: 0,
+        receivedEventsCount: 0,
     },
-    isLoading: false,
+    isLoading: true,
 }
 
 export const userReducer = createReducer(initialState, builder => {

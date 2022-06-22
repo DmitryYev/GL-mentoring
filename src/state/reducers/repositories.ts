@@ -10,7 +10,7 @@ interface IRepositoriesState {
 
 const initialState: IRepositoriesState = {
     reposList: [],
-    isLoading: false,
+    isLoading: true,
 }
 
 export const repositoriesReducer = createReducer(initialState, builder => {

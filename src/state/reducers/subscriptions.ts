@@ -10,7 +10,7 @@ interface ISubscriptionsState {
 
 const initialState: ISubscriptionsState = {
     subsList: [],
-    isLoading: false,
+    isLoading: true,
 }
 
 export const subscriptionsReducer = createReducer(initialState, builder => {

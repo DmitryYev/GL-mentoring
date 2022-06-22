@@ -1,8 +1,7 @@
 import * as selectors from './selectors'
+import * as api from './api'
+import { useAppDispatch, useAppSelector } from './hooks'
 import store from './store'
 
-export { selectors }
-export type RootState = ReturnType<typeof store.getState>
-export type AppDispatch = typeof store.dispatch
-
+export { selectors, api, useAppDispatch, useAppSelector }
 export default store

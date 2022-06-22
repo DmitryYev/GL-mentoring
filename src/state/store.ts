@@ -1,17 +1,18 @@
 import { configureStore, combineReducers } from '@reduxjs/toolkit'
 
-import stateKeys from './stateKeys'
 import { userReducer, followersReducer, repositoriesReducer, subscriptionsReducer } from './reducers'
 
 const rootReducer = combineReducers({
-    [stateKeys.userStateKey]: userReducer,
-    [stateKeys.followersStateKey]: followersReducer,
-    [stateKeys.repositoriesStateKey]: repositoriesReducer,
-    [stateKeys.subscriptionsStateKey]: subscriptionsReducer,
+    user: userReducer,
+    followers: followersReducer,
+    repositories: repositoriesReducer,
+    subscriptions: subscriptionsReducer,
 })
 
 const store = configureStore({
     reducer: rootReducer,
 })
 
+export type RootState = ReturnType<typeof rootReducer>
+export type AppDispatch = typeof store.dispatch
 export default store

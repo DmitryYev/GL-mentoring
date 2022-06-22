@@ -10,7 +10,7 @@ interface IFollowersState {
 
 const initialState: IFollowersState = {
     followersList: [],
-    isLoading: false,
+    isLoading: true,
 }
 
 export const followersReducer = createReducer(initialState, builder => {
