@@ -12,7 +12,7 @@ const SideMenu: FC = () => {
         <aside className={styles['side-menu']}>
             <UserInfo />
 
-            <nav className={styles['nav-container']}>
+            <nav className={styles['links-container']}>
                 <NavigationLink to='repositories'>
                     <div className={styles['link-icon']}>
                         <FontAwesomeIcon icon={faCodeBranch} />
