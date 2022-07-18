@@ -25,14 +25,18 @@ const Header: FC<IHeaderProps> = ({ userData }) => {
                 <Octocat className={styles['greeting-icon']} />
             </div>
             <div className={shortInfoClassName}>
-                <ul>
-                    <li>Received events</li>
-                    <li>Followers</li>
-                </ul>
-                <ul>
-                    <li>{userData.receivedEventsCount}</li>
-                    <li>{userData.followers}</li>
-                </ul>
+                <table>
+                    <tbody>
+                        <tr>
+                            <th scope='row'>Received events</th>
+                            <td>{userData.receivedEventsCount}</td>
+                        </tr>
+                        <tr>
+                            <th scope='row'>Followers</th>
+                            <td>{userData.followersCount}</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </header>
     )

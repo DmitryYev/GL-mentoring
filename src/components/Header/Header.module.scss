@@ -22,7 +22,7 @@
         position: relative;
         background-color: $secondaryColor;
 
-        & h1 {
+        h1 {
             //Small transforms instead of an additional font like on the mock-up
             transform: rotate(-3deg);
             font-style: italic;
@@ -39,8 +39,16 @@
     }
 
     .info-section {
-        justify-content: space-between;
         background-color: $mainColor;
         font-weight: bold;
+
+        table {
+            width: 100%;
+
+            th {
+                width: 100%;
+                text-align: start;
+            }
+        }
     }
 }
