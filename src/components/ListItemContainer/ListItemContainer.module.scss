@@ -1,0 +1,21 @@
+@import '../../scss/variables.scss';
+
+.list-item {
+    position: relative;
+    height: 5rem;
+    width: 100%;
+    padding: 0 2rem;
+    border-radius: 1rem;
+    background-color: $lightColor;
+    border-right-color: transparent;
+
+    &::after {
+        content: '';
+        position: absolute;
+        left: 1rem;
+        right: 1rem;
+        bottom: -0.5px;
+        border-bottom: 1px dashed $darkColor;
+        z-index: 1;
+    }
+}
