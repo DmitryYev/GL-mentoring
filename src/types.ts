@@ -3,7 +3,7 @@ export interface IUser {
     loginName: string
     company: null | string
     avatarLink: string
-    followers: number
+    followersCount: number
     receivedEventsCount: number
 }
 
@@ -16,6 +16,8 @@ export interface IFollower {
 export interface IRepository {
     name: string
     description: string
+    repoLink: string
+    isPrivate: boolean
     forks: number
     owner: {
         loginName: string

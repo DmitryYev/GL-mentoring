@@ -4,9 +4,9 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import Main from './components/Main'
 import Loader from './components/Loader'
 
-const Repositories = lazy(() => import('./components/Repositories'))
-const Followers = lazy(() => import('./components/Followers'))
-const Subscriptions = lazy(() => import('./components/Subscriptions'))
+const RepositoriesPage = lazy(() => import('./components/RepositoriesPage'))
+const FollowersPage = lazy(() => import('./components/FollowersPage'))
+const SubscriptionsPage = lazy(() => import('./components/SubscriptionsPage'))
 const About = lazy(() => import('./components/About'))
 
 const App: FC = () => {
@@ -15,10 +15,10 @@ const App: FC = () => {
             <Main>
                 <Suspense fallback={<Loader />}>
                     <Routes>
-                        <Route path='repositories' element={<Repositories />} />
-                        <Route path='followers' element={<Followers />} />
-                        <Route path='subscriptions' element={<Subscriptions />} />
-                        <Route path='about' element={<About />} />
+                        <Route path='/repositories' element={<RepositoriesPage />} />
+                        <Route path='/followers' element={<FollowersPage />} />
+                        <Route path='/subscriptions' element={<SubscriptionsPage />} />
+                        <Route path='/about' element={<About />} />
 
                         <Route path='*' element={<Navigate to='repositories' replace />} />
                     </Routes>

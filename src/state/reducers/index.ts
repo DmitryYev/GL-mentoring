@@ -1,4 +1,4 @@
-export { userReducer } from './user'
+export { userReducer, resetUserStore } from './user'
 export { repositoriesReducer } from './repositories'
-export { followersReducer } from './followers'
+export { followersReducer, resetFollowersStore } from './followers'
 export { subscriptionsReducer } from './subscriptions'

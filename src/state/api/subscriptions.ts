@@ -5,8 +5,10 @@ import { IRepository } from '../../types'
 
 interface ISubscriptionRaw {
     name: string
-    forks: number
     description: string
+    html_url: string
+    forks: number
+    private: boolean
     owner: {
         avatar_url: string
         login: string
@@ -24,6 +26,8 @@ const fetchSubscriptions = createAsyncThunk<IRepository[], string, { rejectValue
                     (subscription: ISubscriptionRaw): IRepository => ({
                         name: subscription.name,
                         description: subscription.description,
+                        repoLink: subscription.html_url,
+                        isPrivate: subscription.private,
                         forks: subscription.forks,
                         owner: {
                             loginName: subscription.owner.login,

@@ -1,0 +1,20 @@
+.followers-grid {
+    height: 100%;
+    width: 100%;
+    display: grid;
+    align-items: center;
+    grid-template-columns: 20% 30% 50%;
+}
+
+.follower-link {
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 3rem;
+    font-weight: bold;
+}
+
+.follower-name {
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+}

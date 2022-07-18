@@ -1,0 +1,28 @@
+.subscription-grid {
+    height: 100%;
+    width: 100%;
+    display: grid;
+    align-items: center;
+    grid-template-columns: 15% 20% 45% 10% 10%;
+}
+
+.table-cell {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem;
+
+    &__owner {
+        flex-direction: column;
+        gap: 0.1rem;
+        font-size: 85%;
+    }
+
+    &__text-cell {
+        display: block;
+        text-align: center;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+}

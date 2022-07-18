@@ -26,7 +26,7 @@ const fetchUser = createAsyncThunk<IUser, string, { rejectValue: string }>(
             return {
                 name: userData.name,
                 company: userData.company,
-                followers: userData.followers,
+                followersCount: userData.followers,
                 loginName: userData.login,
                 avatarLink: userData.avatar_url,
                 receivedEventsCount: receivedEvents.length,

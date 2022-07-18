@@ -5,8 +5,10 @@ import { IRepository } from '../../types'
 
 interface IRepositoryRaw {
     name: string
-    forks: number
     description: string
+    html_url: string
+    forks: number
+    private: boolean
     owner: {
         avatar_url: string
         login: string
@@ -15,7 +17,7 @@ interface IRepositoryRaw {
 
 const fetchRepositories = createAsyncThunk<IRepository[], string, { rejectValue: string }>(
     'user/fetchRepositories',
-    async (userName: string, { rejectWithValue }) => {
+    async (userName, { rejectWithValue }) => {
         try {
             const { data } = await apiClient.get(`/users/${userName}/repos`)
 
@@ -24,6 +26,8 @@ const fetchRepositories = createAsyncThunk<IRepository[], string, { rejectValue:
                     (repository: IRepositoryRaw): IRepository => ({
                         name: repository.name,
                         description: repository.description,
+                        repoLink: repository.html_url,
+                        isPrivate: repository.private,
                         forks: repository.forks,
                         owner: {
                             loginName: repository.owner.login,
