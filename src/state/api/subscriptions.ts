@@ -1,6 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit'
 
-import apiClient from '../../utils/apiClient'
+import { userApiClient } from '../../utils/apiClient'
 import { IRepository } from '../../types'
 
 interface ISubscriptionRaw {
@@ -15,11 +15,11 @@ interface ISubscriptionRaw {
     }
 }
 
-const fetchSubscriptions = createAsyncThunk<IRepository[], string, { rejectValue: string }>(
+const fetchSubscriptions = createAsyncThunk<IRepository[], undefined, { rejectValue: string }>(
     'user/fetchRepositories',
-    async (userName: string, { rejectWithValue }) => {
+    async (_, { rejectWithValue }) => {
         try {
-            const { data } = await apiClient.get(`/users/${userName}/subscriptions`)
+            const { data } = await userApiClient.get(`/subscriptions`)
 
             if (data && data.length) {
                 return data.map(

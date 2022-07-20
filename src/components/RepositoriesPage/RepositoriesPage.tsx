@@ -25,8 +25,8 @@ const RepositoriesPage: FC = () => {
     )
 
     useEffect(() => {
-        dispatch(api.fetchRepositories(userName))
-    }, [dispatch, userName])
+        dispatch(api.fetchRepositories())
+    }, [dispatch])
 
     const handleSearch = (event: ChangeEvent<HTMLInputElement>) => {
         setRepoNameFilter(event.target.value)

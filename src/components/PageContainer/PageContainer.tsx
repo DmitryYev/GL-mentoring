@@ -17,10 +17,10 @@ type PageContainerProps =
     | {
           withPagination: false
           contentLoaded: boolean
-          handleLoading?: never
-          isLoading?: never
-          pageLimit?: never
-          totalItemsAmount?: never
+          handleLoading?: undefined
+          isLoading?: undefined
+          pageLimit?: undefined
+          totalItemsAmount?: undefined
       }
 
 const PageContainer: FC<PropsWithChildren<PageContainerProps>> = ({

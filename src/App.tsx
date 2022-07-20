@@ -7,7 +7,7 @@ import Loader from './components/Loader'
 const RepositoriesPage = lazy(() => import('./components/RepositoriesPage'))
 const FollowersPage = lazy(() => import('./components/FollowersPage'))
 const SubscriptionsPage = lazy(() => import('./components/SubscriptionsPage'))
-const About = lazy(() => import('./components/About'))
+const AboutPage = lazy(() => import('./components/AboutPage'))
 
 const App: FC = () => {
     return (
@@ -18,7 +18,7 @@ const App: FC = () => {
                         <Route path='/repositories' element={<RepositoriesPage />} />
                         <Route path='/followers' element={<FollowersPage />} />
                         <Route path='/subscriptions' element={<SubscriptionsPage />} />
-                        <Route path='/about' element={<About />} />
+                        <Route path='/about' element={<AboutPage />} />
 
                         <Route path='*' element={<Navigate to='repositories' replace />} />
                     </Routes>

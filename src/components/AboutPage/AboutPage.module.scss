@@ -1,0 +1,23 @@
+.about-page {
+    display: flex;
+    padding: 1rem;
+    flex-direction: row;
+    gap: 5rem;
+}
+
+.user-info-section {
+    display: flex;
+    flex-direction: column;
+}
+
+.user-name {
+    font-size: 200%;
+    margin-bottom: 1.5rem;
+    font-weight: bold;
+}
+
+.info-title {
+    font-size: 110%;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}

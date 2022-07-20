@@ -1,8 +1,10 @@
 export interface IUser {
     name: null | string
-    loginName: string
+    email: null | string
     company: null | string
+    loginName: string
     avatarLink: string
+    profileLink: string
     followersCount: number
     receivedEventsCount: number
 }

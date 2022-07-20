@@ -11,9 +11,11 @@ interface IUserState {
 const initialState: IUserState = {
     userData: {
         name: null,
-        loginName: '',
+        email: null,
         company: null,
+        loginName: '',
         avatarLink: '',
+        profileLink: '',
         followersCount: 0,
         receivedEventsCount: 0,
     },

@@ -19,9 +19,9 @@ const FollowersPage: FC = () => {
 
     const handleLoad = useCallback(
         (page: number, pageLimit: number) => {
-            dispatch(api.fetchFollowers({ userName, page, pageLimit }))
+            dispatch(api.fetchFollowers({ page, pageLimit }))
         },
-        [dispatch, userName]
+        [dispatch]
     )
 
     useEffect(

@@ -11,8 +11,8 @@ type PageHeaderContainerProps =
       }
     | {
           withSearch: false
-          onSearch?: never
-          placeholder?: never
+          onSearch?: undefined
+          placeholder?: undefined
           title: string
       }
 

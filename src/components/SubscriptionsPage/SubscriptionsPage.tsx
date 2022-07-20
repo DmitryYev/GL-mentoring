@@ -25,8 +25,8 @@ const SubscriptionPage: FC = () => {
     )
 
     useEffect(() => {
-        dispatch(api.fetchSubscriptions(userName))
-    }, [dispatch, userName])
+        dispatch(api.fetchSubscriptions())
+    }, [dispatch])
 
     const handleSearch = (event: ChangeEvent<HTMLInputElement>) => {
         setSubscriptionFilter(event.target.value)

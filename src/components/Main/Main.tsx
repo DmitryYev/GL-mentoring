@@ -1,4 +1,4 @@
-import { FC, useLayoutEffect } from 'react'
+import { FC, useEffect } from 'react'
 
 import SideMenu from '../SideMenu'
 import Header from '../Header'
@@ -16,8 +16,8 @@ const Main: FC<IMainProps> = ({ children }) => {
     const { isLoading: isUserDataLoading, userData } = useAppSelector(selectors.userSelector)
     const dispatch = useAppDispatch()
 
-    useLayoutEffect(() => {
-        dispatch(api.fetchUser('gaearon'))
+    useEffect(() => {
+        dispatch(api.fetchUser())
     }, [dispatch])
 
     return (

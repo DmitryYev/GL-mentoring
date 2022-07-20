@@ -1,34 +1,36 @@
 import { createAsyncThunk } from '@reduxjs/toolkit'
 
-import apiClient from '../../utils/apiClient'
+import { userApiClient } from '../../utils/apiClient'
 import { IUser } from '../../types'
 
 interface IUserResponse {
     name: null | string
+    email: null | string
     login: string
-    avatar_url: string
     company: null | string
+    html_url: string
     followers: number
+    avatar_url: string
 }
 
 interface IReceivedEventsResponse extends Array<{ [key: string]: unknown }> {}
 
-const fetchUser = createAsyncThunk<IUser, string, { rejectValue: string }>(
+const fetchUser = createAsyncThunk<IUser, undefined, { rejectValue: string }>(
     'user/fetchUser',
-    async (userName: string, { rejectWithValue }) => {
+    async (_, { rejectWithValue }) => {
         try {
-            const { data: userData } = await apiClient.get<IUserResponse>(`/users/${userName}`)
+            const { data: userData } = await userApiClient.get<IUserResponse>('')
 
-            const { data: receivedEvents } = await apiClient.get<IReceivedEventsResponse>(
-                `/users/${userName}/received_events`
-            )
+            const { data: receivedEvents } = await userApiClient.get<IReceivedEventsResponse>(`/received_events`)
 
             return {
                 name: userData.name,
+                email: userData.email,
                 company: userData.company,
-                followersCount: userData.followers,
                 loginName: userData.login,
                 avatarLink: userData.avatar_url,
+                profileLink: userData.html_url,
+                followersCount: userData.followers,
                 receivedEventsCount: receivedEvents.length,
             }
         } catch (error) {
