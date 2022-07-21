@@ -36,7 +36,9 @@ const AboutPage: FC = () => {
                         {email}
                     </span>
                 )}
-                <a href={profileLink}>GitHub Account</a>
+                <a href={profileLink}>
+                    <strong>GitHub Account</strong>
+                </a>
             </div>
         </div>
     )

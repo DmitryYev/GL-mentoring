@@ -22,8 +22,6 @@ const initialState: IUserState = {
     isLoading: true,
 }
 
-export const resetUserStore = createAction('resetUserStore')
-
 export const userReducer = createReducer(initialState, builder => {
     builder
         .addCase(fetchUser.pending, state => {
@@ -33,5 +31,4 @@ export const userReducer = createReducer(initialState, builder => {
             state.isLoading = false
             state.userData = action.payload
         })
-        .addCase(resetUserStore, () => initialState)
 })

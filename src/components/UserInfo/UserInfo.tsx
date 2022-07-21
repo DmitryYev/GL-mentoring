@@ -8,13 +8,14 @@ import styles from './UserInfo.module.scss'
 
 const UserInfo: FC = () => {
     const {
-        userData: { avatarLink, loginName },
+        userData: { avatarLink, loginName, name, email },
     } = useAppSelector(selectors.userSelector)
 
     return (
         <div className={styles['info-container']}>
             <UserAvatar size='large' avatarLink={avatarLink} />
-            <h2>{loginName}</h2>
+            <h2>{name || loginName}</h2>
+            {email && <span>{email}</span>}
         </div>
     )
 }
